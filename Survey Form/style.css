@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 1px solid gray;
+    width: 50%;
+    height: 500px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.container h3 {
+    font-size: 40px;
+    margin-left: 160px;
+}
+
+form {
+    /* border: 1px solid green; */
+    padding-left: 120px;
+}
+
+.form-control {
+    /* border: 1px solid red; */
+    height: 50px;
+    width: 400px;
+    display: grid;
+    margin-top: 10px;
+}
+
+.form-control input {
+    height: 40px;
+}
+
+#submit {
+    margin-top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#reset {
+    font-size: 20px;
+    cursor: pointer;
+}
