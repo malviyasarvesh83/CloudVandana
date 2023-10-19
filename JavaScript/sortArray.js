@@ -1,4 +1,4 @@
-sortArrayDescending = (arr) => {
+function sortArrayDescending (arr) {
     arr.sort((a, b) => {
         return b - a;
     })

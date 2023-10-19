@@ -1,4 +1,4 @@
-const reverseWords = (sentence) => {
+function reverseWords (sentence) {
     const words = sentence.split(' ');
     
     // Reverse each word

@@ -1,20 +1,45 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("surveyForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const resetBtn = document.getElementById("resetBtn");
 
-let form = document.getElementById('form');
+  submitBtn.addEventListener("click", function () {
+    // Get form values
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const dob = document.getElementById("dob").value;
+    const country = document.getElementById("country").value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const profession = document.getElementById("profession").value;
+    const email = document.getElementById("email").value;
+    const mobile = document.getElementById("mobile").value;
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    let fname = document.getElementById('fname').value;
-    let lname = document.getElementById('lname').value;
-    let country = document.getElementById('country').value;
-    let gender = document.getElementById('gender').value;
-    let email = document.getElementById('email').value;
-    let phone = document.getElementById('phone').value;
+    // Validate the form
+    if (
+      !firstName ||
+      !lastName ||
+      !dob ||
+      !country ||
+      !gender ||
+      !profession ||
+      !email ||
+      !mobile
+    ) {
+      alert("Please fill in all required fields.");
+      return;
+    }
 
-    alert('First Name : ' + fname + ' Last Name : ' + lname + ' Country :' + country + ' Gender : ' + gender + ' email : ' + email + ' phone : ' + phone);
-    document.getElementById("fname").value='';
-    document.getElementById("lname").value='';
-    document.getElementById("country").value='';
-    document.getElementById("gender").value='';
-    document.getElementById("email").value='';
-    document.getElementById("phone").value = '';
-})
+    // Display a popup with the collected data
+    const popupText = `First Name: ${firstName}\nLast Name: ${lastName}\nDate of Birth: ${dob}\nCountry: ${country}\nGender: ${gender.value}\nProfession: ${profession}\nEmail: ${email}\nMobile Number: ${mobile}`;
+
+    alert(popupText);
+
+    // Reset the form
+    form.reset();
+  });
+
+  resetBtn.addEventListener("click", function () {
+    // Reset the form
+    form.reset();
+  });
+});
